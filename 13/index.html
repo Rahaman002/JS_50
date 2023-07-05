@@ -1,18 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <form>
-        <input id="input" type="text" placeholder="Enter value to add " />
-        <button id="adding">ADD</button>
-        <button id="displaying">DISPLAY</button>
-    </form>
-    <h5 id="displayi"></h5>
-    <script src="13_add_and_display.js"></script>
-</body>
-</html>
+<html>
 
+<body style="text-align:center;">
+    <input type="text" id="myText" value="">
+    <button type="button" onclick="myadd()">Add</button>
+	<button type="button" onclick="myFunction()">Display</button>
+	<p id="demo"></p>
+
+	
+	<script>
+        var text="";
+        var arr=Array();
+    function myadd()
+    {
+        arr.push(document.getElementById("myText").value);
+        console.log(arr);
+    }
+	
+	function myFunction() {
+    var demo = document.getElementById("demo");
+    demo.innerHTML = ""; // Clear the existing content
+
+    arr.forEach((ele, id) => {
+        var temp = document.createElement('h3');
+        temp.innerHTML = `Element ${id} : ${ele}\n`;
+        demo.appendChild(temp);
+    });
+}
+
+
+
+	</script>
+</body>
+
+</html>

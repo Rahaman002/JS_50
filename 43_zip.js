@@ -8,7 +8,9 @@ Expected Output:
 [["a","b"],[1,2],[true,false]]
 [["a","b"],[1,2],[true]]
 */
-const unzip = (arr1, arr2) => {
+const unzip = (arr) => {
+    arr1=arr[0]
+    arr2=arr[1]
     const big = arr1.length > arr2.length ? arr1.length : arr2.length;
     return Array.from({ length: big }, (_, i) => {
       if (arr1[i] === undefined || arr2[i] === undefined) {
@@ -19,5 +21,6 @@ const unzip = (arr1, arr2) => {
     });
   };
   
-  console.log(unzip(['a', 1, true], ['b', 2, false]));
+  console.log(unzip([['a', 1, true], ['b', 2, false]]));
+  console.log(unzip([['a', 1, true], ['b', 2]]));
   
